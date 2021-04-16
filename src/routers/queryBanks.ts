@@ -17,7 +17,7 @@ type Params = {
     offset?: number;
 };
 
-router.get("/autocomplected", async (req, res) => {
+router.get("/autocomplete", async (req, res) => {
     const { q, limit, offset }: Params = req.query;
 
     const branches = await getBanksAutocomplect(q, limit, offset);

@@ -47,8 +47,8 @@ export async function getBanksQuery(
       const qParam = sanitize(q);
   
       query = `SELECT ifsc, branch, address, city, district, state, id, name from branches, banks 
-                            WHERE (branches.doc_vectors @@ to_tsquery('${qParam}') 
-                                    OR  banks.doc_vectors @@ to_tsquery('${qParam}'))
+                            WHERE (branches.document_vectors @@ to_tsquery('${qParam}') 
+                                    OR  banks.document_vectors @@ to_tsquery('${qParam}'))
                             AND banks.id = branches.bank_id
                             ORDER BY ifsc
                             LIMIT ${limit}
