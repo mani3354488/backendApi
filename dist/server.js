@@ -4,11 +4,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
+var dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 var app = express_1.default();
 app.get("/", function (req, res) {
     res.json({ message: "api is working" });
 });
-app.listen(3000, function () {
-    console.log("Server running at port 3000");
+app.listen(process.env.PORT, function () {
+    console.log("Server running at port " + process.env.PORT);
 });
 //# sourceMappingURL=server.js.map
