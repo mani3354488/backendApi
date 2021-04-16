@@ -18,3 +18,18 @@ pool.on("error", (err, client) => {
     console.log(err);
     process.exit(-1);
 });
+
+export const execQuery = async (query: string) => {
+    const client = await pool.connect();
+
+    const res = await client.query(query).catch((err) => {
+        console.log(err);
+    });
+
+    client.release();
+    return res;
+};
+
+process.on("exit", () => pool.end());
+
+export default pool;
