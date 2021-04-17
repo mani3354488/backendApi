@@ -23,6 +23,7 @@ export const execQuery = async (query: string) => {
     const client = await pool.connect();
 
     const res = await client.query(query).catch((err) => {
+        console.error(`\n \"${query}\"`);
         console.log(err);
     });
 

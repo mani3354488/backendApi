@@ -18,3 +18,5 @@ app.use('/api/branches/', BankRouter);
 app.listen(process.env.PORT, () => {
     console.log(`Server running at port ${process.env.PORT}`)
 });
+
+export default app;
