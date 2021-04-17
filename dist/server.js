@@ -7,12 +7,13 @@ var express_1 = __importDefault(require("express"));
 var cors_1 = __importDefault(require("cors"));
 var dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
+var queryBanks_1 = __importDefault(require("./routers/queryBanks"));
 var app = express_1.default();
 app.use(cors_1.default());
 app.get("/", function (req, res) {
     res.json({ message: "api is working" });
 });
-// app.use('/api/branches/', BankRouter);
+app.use('/api/branches/', queryBanks_1.default);
 app.listen(process.env.PORT, function () {
     console.log("Server running at port " + process.env.PORT);
 });
