@@ -3,10 +3,10 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const pool = new Pool({
-    user: 'uj0makxizfh5usbpujoi',
-    host: 'b753jpx78siil6d92hnf-postgresql.services.clever-cloud.com',
-    database: 'b753jpx78siil6d92hnf',
-    password: 'x7fzL00DdYc6NUOKqT1C',
+    user: 'uwwbhwcdefchkqjjecxb',
+    host: 'bjdsvullqjtg1ihjxa3s-postgresql.services.clever-cloud.com',
+    database: 'bjdsvullqjtg1ihjxa3s',
+    password: '4NNt3CN1fWPzj5rXUk0O',
     port: 5432,
 });
 
