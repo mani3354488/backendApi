@@ -3,3 +3,7 @@ curl http://app-36504f03-cf59-44d6-8dc1-9d872a93a9bb.cleverapps.io/api/branches?
 
 ###
 curl http://app-36504f03-cf59-44d6-8dc1-9d872a93a9bb.cleverapps.io/api/branches/autocomplete?q=RTGS&limit=3&offset=0
+
+###
+
+GET http://localhost:5000/api/branches/autocomplete?q=RTGS&limit=3&offset=0

@@ -44,10 +44,10 @@ var pg_1 = require("pg");
 var dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 var pool = new pg_1.Pool({
-    user: 'wwbhwcdefchkqjjecxb',
-    host: 'bjdsvullqjtg1ihjxa3s-postgresql.services.clever-cloud.com',
-    database: 'bjdsvullqjtg1ihjxa3s',
-    password: '4NNt3CN1fWPzj5rXUk0O',
+    user: process.env.POSTGRESQL_ADDON_USER,
+    host: process.env.POSTGRESQL_ADDON_HOST,
+    database: process.env.POSTGRESQL_ADDON_DB,
+    password: process.env.POSTGRESQL_ADDON_PASSWORD,
     port: 5432,
 });
 pool.on("connect", function (client) {
