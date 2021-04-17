@@ -19,18 +19,27 @@ type Params = {
 
 router.get("/autocomplete", async (req, res) => {
     const { q, limit, offset }: Params = req.query;
+    try {
+        
+        const branches = await getBanksAutocomplect(q, limit, offset);
 
-    const branches = await getBanksAutocomplect(q, limit, offset);
-
-    res.json({branches});
+        res.json({branches});
+    } catch (err) {
+        console.log(err)
+        return res.status(500).json(err)
+    }
 });
 
 router.get("/", async (req, res) => {
     const { q, limit, offset }: Params = req.query;
+    try {
+        const branches = await getBanksQuery(q!, limit, offset);
 
-    const branches = await getBanksQuery(q!, limit, offset);
-
-    res.json({branches});
+        res.json({branches});
+    } catch (err) {
+        console.log(err)
+        return res.status(500).json(err)
+    }
 });
 
 export default router;
